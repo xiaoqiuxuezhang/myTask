@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0; padding: 0;}
+        @keyframes demo{
+           form{left:0;}
+            to{left:-113px;}
+        }
+        .box{
+            width:200px;
+            height:50px;
+            border:1px dashed mediumaquamarine;
+            margin: 50px auto;
+            overflow:hidden;
+            position: relative;
+        }
+        .move{
+            width:400px;
+            height:50px;
+            position: absolute;
+            top:0;
+            left:0;
+            animation: 1s demo linear infinite;
+            background: -webkit-repeating-linear-gradient(45deg,red 0,red 20px,#fff 20px,#fff 40px,blue 40px,blue 60px,#fff 60px, #fff 80px);
+            background: -moz-repeating-linear-gradient(45deg,red 0,red 20px,#fff 20px,#fff 40px,blue 40px,blue 60px,#fff 60px, #fff 80px);
+            background: -ms-repeating-linear-gradient(45deg,red 0,red 20px,#fff 20px,#fff 40px,blue 40px,blue 60px,#fff 60px, #fff 80px);
+            background: -o-repeating-linear-gradient(45deg,red 0,red 20px,#fff 20px,#fff 40px,blue 40px,blue 60px,#fff 60px, #fff 80px);
+
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oMove=document.querySelector('.move');
+            var oC=document.querySelectorAll('.content');
+            for(var i=0; i<oC.length; i++){
+                    oC[i].onchange=function(){
+                      oMove.style.background=' -webkit-repeating-linear-gradient(45deg,'+oC[0].value+' 0,'+oC[0].value+' 20px,#fff 20px,#fff 40px,'+oC[1].value+' 40px,'+oC[1].value+' 60px,#fff 60px, #fff 80px)';
+                      oMove.style.background=' -moz-repeating-linear-gradient(45deg,'+oC[0].value+' 0,'+oC[0].value+' 20px,#fff 20px,#fff 40px,'+oC[1].value+' 40px,'+oC[1].value+' 60px,#fff 60px, #fff 80px)';
+                      oMove.style.background=' -ms-repeating-linear-gradient(45deg,'+oC[0].value+' 0,'+oC[0].value+' 20px,#fff 20px,#fff 40px,'+oC[1].value+' 40px,'+oC[1].value+' 60px,#fff 60px, #fff 80px)';
+                      oMove.style.background=' -o-repeating-linear-gradient(45deg,'+oC[0].value+' 0,'+oC[0].value+' 20px,#fff 20px,#fff 40px,'+oC[1].value+' 40px,'+oC[1].value+' 60px,#fff 60px, #fff 80px)';
+                    }
+            }
+        };
+    </script>
+</head>
+<body>
+<input type="color" value="#ff0000" class="content"/>
+<input type="color" value="#0000ff" class="content"/>
+<div class="box">
+    <div class="move"></div>
+</div>
+</body>
+</html>

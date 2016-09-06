@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0; padding: 0;}
+        @keyframes demo{
+           form{left:0;}
+            to{left:-113px;}
+        }
+        .box{
+            width:113px;
+            height:200px;
+            border:1px dashed mediumaquamarine;
+            margin: 50px auto;
+            overflow:hidden;
+            position: relative;
+        }
+        .move{
+            width:300px;
+            height:200px;
+            position: absolute;
+            top:0;
+            left:0;
+            animation: 1s demo linear infinite;
+            background: -webkit-repeating-linear-gradient(45deg,red 0,red 20px,#fff 20px,#fff 40px,blue 40px,blue 60px,#fff 60px, #fff 80px);
+            background: -moz-repeating-linear-gradient(45deg,red 0,red 20px,#fff 20px,#fff 40px,blue 40px,blue 60px,#fff 60px, #fff 80px);
+            background: -ms-repeating-linear-gradient(45deg,red 0,red 20px,#fff 20px,#fff 40px,blue 40px,blue 60px,#fff 60px, #fff 80px);
+            background: -o-repeating-linear-gradient(45deg,red 0,red 20px,#fff 20px,#fff 40px,blue 40px,blue 60px,#fff 60px, #fff 80px);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="move"></div>
+</div>
+</body>
+</html>
